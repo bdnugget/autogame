@@ -57,8 +57,8 @@ static Color garageColors[GARAGE_COUNT] = {
 	RED, GREEN, BLUE, YELLOW, PURPLE
 };
 
-Sound autoHappy;
-Sound autoSad;
+static Sound autoHappy;
+static Sound autoSad;
 
 //------------------------------------------------------------------------------------
 //Module Functions Declaration(local)
@@ -76,11 +76,11 @@ static void	InitGarages(void);
 int main(void){
 	InitWindow(screenWidth, screenHeight, "Dikke Vette Cargame voor Milo");
   InitAudioDevice();
-  autoHappy = LoadSound("resources/auto_excited.ogg");
-  autoSad = LoadSound("resources/auto_sad.ogg");
+  autoHappy = LoadSound("resources/auto_happy_vob.ogg");
+  //autoHappy = LoadSound("resources/fart.mp3");
+  autoSad = LoadSound("resources/auto_sad_vob.ogg");
 	autoTexture = LoadTexture("resources/auto_200px.png");
 	garageTexture = LoadTexture("resources/autogarage_200px.png");
-
  
 	InitGame();
 
@@ -209,26 +209,28 @@ DrawGame(void)
 {
 	BeginDrawing();
 
-	ClearBackground(RAYWHITE);
+	ClearBackground(DARKGRAY);
 
 	if (!gameOver) {
 		//Draw grid lines
+    /*
 			for (int i = 0; i < screenWidth / SQUARE_SIZE + 1; i++) {
 			DrawLineV((Vector2) {
 				SQUARE_SIZE    *i + offset.x / 2, offset.y / 2
 			}	       , (Vector2) {
 				SQUARE_SIZE    *i + offset.x / 2, screenHeight - offset.y / 2
-			}	       , LIGHTGRAY);
+			}	       , RAYWHITE);
 		}
-
+    */
+    
 		for (int i = 0; i < screenHeight / SQUARE_SIZE + 1; i++) {
 			DrawLineV((Vector2) {
 				offset.x / 2, SQUARE_SIZE * i + offset.y / 2
 			}, (Vector2) {
-				screenWidth - offset.x / 2, SQUARE_SIZE * i + offset.y / 2
-			}, LIGHTGRAY);
+				screenWidth - offset.x / 20, SQUARE_SIZE * i + offset.y / 2
+			}, RAYWHITE);
 		}
-
+    
 		//Draw garages
 			for (int i = 0; i < GARAGE_COUNT; i++) {
 			DrawRectangleRec((Rectangle) {
@@ -238,6 +240,7 @@ DrawGame(void)
 
 		//Draw car
 		DrawTextureV(autoTexture, car.position, car.color);
+
 		if (pause)
 			DrawText("GAME PAUSED", screenWidth / 2 - MeasureText("GAME PAUSED", 40) / 2, screenHeight / 2 - 40, 40, GRAY);
 	} else
