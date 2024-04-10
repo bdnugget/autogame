@@ -74,7 +74,7 @@ int main(void) {
     InitAudioDevice();
     autoHappy = LoadSound("resources/auto_happy_vob.ogg");
     autoSad = LoadSound("resources/auto_sad_vob.ogg");
-    autoTexture = LoadTexture("resources/auto_200px.png");
+    autoTexture = LoadTexture("resources/car_200px.png");
     garageTexture = LoadTexture("resources/autogarage_200px.png");
 
     InitGame();
