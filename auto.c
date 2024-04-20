@@ -3,7 +3,7 @@
 #include <stdlib.h> // For NULL
 
 // Comment/uncomment for WASM
-//#define PLATFORM_WEB
+// #define PLATFORM_WEB
 
 #if defined(PLATFORM_WEB)
 #include <emscripten/emscripten.h>
@@ -139,7 +139,7 @@ void UpdateGame(void) {
                 allowMove = false;
             }
 
-            if ((framesCounter % (FPS_TARGET/60)) == 0) {
+            if ((framesCounter % (FPS_TARGET / 60)) == 0) {
                 car.position.x += SQUARE_SIZE/FPS_TARGET;
                 car.position.y += car.direction * SQUARE_SIZE;
                 allowMove = true;
@@ -164,8 +164,8 @@ void UpdateGame(void) {
         }
     } else {
         if (IsKeyPressed(KEY_ENTER)) {
+            score = 0;
             InitGame();
-            gameOver = false;
         }
     }
 }
