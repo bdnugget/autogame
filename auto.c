@@ -197,7 +197,11 @@ void DrawGame(void) {
         if (pause)
             DrawText("GAME PAUSED", screenWidth / 2 - MeasureText("GAME PAUSED", 40) / 2, screenHeight / 2 - 40, 40, GRAY);
     } else
-        DrawText("A WINRAR IS NOT YOU :(\nPRESS [ENTER] TO PLAY AGAIN", GetScreenWidth() / 2 - MeasureText("A WINRAR IS NOT YOU :(\nPRESS [ENTER] TO PLAY AGAIN", 20) / 2, GetScreenHeight() / 2 - 50, 20, GRAY);
+        DrawText(
+            "A WINRAR IS NOT YOU :(\nPRESS [ENTER] TO PLAY AGAIN", 
+            GetScreenWidth() / 2 - MeasureText("A WINRAR IS NOT YOU :(\nPRESS [ENTER] TO PLAY AGAIN", 20) / 2, 
+            GetScreenHeight() / 2 - 50, 20, GRAY
+            );
 
     EndDrawing();
 }
