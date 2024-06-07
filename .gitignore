@@ -1,0 +1,96 @@
+*.core
+
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with e.g. 'go test -c'
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Package files
+*.deb
+*.dmg
+*.rpm
+*.zip
+
+# Logs
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# IDE settings
+.editorconfig
+
+# Compiled binary (not in repository)
+*.exe
+
+# Elixir
+_build/
+
+# Gradle
+.gradle
+
+# Maven
+target/
+
+# SBT
+target/
+
+# Gradle
+.gradle
+
+# Maven
+target/
+
+# Scala IDE
+.scala_metadata
+
+# Eclipse
+.classpath
+.project
+.settings/
+.cache
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+
+# Sonarlint
+.sonarlint/
+
+# MAVEN
+target/
+
+# Linux trash folder which might appear on any filesystem
+.Trash-*
+
